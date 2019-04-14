@@ -1,6 +1,6 @@
 {
   "name": "xsimpletest",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "index.js",
   "bin": {
@@ -11,8 +11,8 @@
     "test1": "node bin/x.js ut",
     "help": "node bin/x.js --help"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "yisbug@qq.com",
+  "license": "MIT",
   "dependencies": {
     "colors": "^1.3.3",
     "fs-extra": "^7.0.1"
