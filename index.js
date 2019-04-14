@@ -41,6 +41,37 @@ const x = {};
 x.cli = {
   async run(args) {
     const matchWord = args[2] || '';
+    if (matchWord === '--help') {
+      console.log(`Useage`.yellow);
+      console.log(
+        `
+x $word // 匹配 test 目录下 $word.test.js
+x // 执行 test 目录下所有 $.test.js\r\n`.info
+      );
+      console.log(`Assert 断言模块 API：`.yellow);
+      console.log(
+        `
+assert(value[, message])
+assert.deepEqual(actual, expected[, message])
+assert.deepStrictEqual(actual, expected[, message])
+assert.doesNotReject(asyncFn[, error][, message])
+assert.doesNotThrow(fn[, error][, message])
+assert.equal(actual, expected[, message])
+assert.fail([message])
+assert.fail(actual, expected[, message[, operator[, stackStartFn]]])
+assert.ifError(value)
+assert.notDeepEqual(actual, expected[, message])
+assert.notDeepStrictEqual(actual, expected[, message])
+assert.notEqual(actual, expected[, message])
+assert.notStrictEqual(actual, expected[, message])
+assert.ok(value[, message])
+assert.rejects(asyncFn[, error][, message])
+assert.strictEqual(actual, expected[, message])
+assert.throws(fn[, error][, message])`.info
+      );
+      return;
+    }
+
     const cwd = process.cwd();
 
     // 监听目录变化
