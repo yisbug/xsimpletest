@@ -99,7 +99,8 @@ assert.throws(fn[, error][, message])`.info
       try {
         // 删除缓存的模块
         delete require.cache[file];
-        const test = require(file);
+        let test = require(file);
+        if (test.default) test = test.default;
         let start = 0;
         await test(log => {
           if (start) {
