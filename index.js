@@ -48,6 +48,7 @@ x.cli = {
       console.log(`Start watch dir: ${cwd}`.info);
       fs.watch(cwd, { recursive: true }, (eventType, filename) => {
         isWatch = true;
+        delete require.cache[path.join(cwd, filename)];
         console.log(`\r\n\r\n===${filename} ${eventType}, restart all tests.`.warn);
         this.run(args);
       });
