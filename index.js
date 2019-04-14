@@ -1,3 +1,5 @@
+require('@babel/register');
+require('@babel/polyfill');
 const assert = require('assert').strict;
 const process = require('process');
 const fs = require('fs');
@@ -79,6 +81,8 @@ assert.throws(fn[, error][, message])`.info
       console.log(`Start watch dir: ${cwd}`.info);
       fs.watch(cwd, { recursive: true }, (eventType, filename) => {
         isWatch = true;
+        if (filename.match(/^node_modules/)) return;
+        if (filename.match(/^\./)) return;
         delete require.cache[path.join(cwd, filename)];
         console.log(`\r\n\r\n===${filename} ${eventType}, restart all tests.`.warn);
         this.run(args);

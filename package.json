@@ -1,23 +1,25 @@
 {
   "name": "xsimpletest",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "",
   "main": "index.js",
   "bin": {
-    "x": "babel-node  bin/x.js "
+    "x": "bin/x.js "
   },
   "scripts": {
-    "test": "babel-node  bin/x.js ",
-    "test1": "node bin/x.js ut",
-    "help": "node bin/x.js --help"
+    "test": "bin/x.js",
+    "test2": "bin/x.js per",
+    "test1": "bin/x.js ut",
+    "help": "bin/x.js --help"
   },
   "author": "yisbug@qq.com",
   "license": "MIT",
   "dependencies": {
     "@babel/core": "^7.4.3",
     "@babel/node": "^7.2.2",
+    "@babel/polyfill": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
-    "babel-core": "^6.26.3",
+    "@babel/register": "^7.4.0",
     "colors": "^1.3.3",
     "fs-extra": "^7.0.1"
   }
